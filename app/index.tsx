@@ -5,7 +5,7 @@ export default function Index() {
     <View
       style={styles.container}
     >
-      <Text style={styles.text}>JazzBacks.</Text>
+      <Text style={styles.text}>JazzBacks</Text>
     </View>
   );
 }
