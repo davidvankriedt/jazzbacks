@@ -29,19 +29,49 @@ export default function TabsLayout() {
             ),
         }}
         />
-      <Tabs.Screen
-        name="about"
+      
+      <Tabs.Screen 
+        name="shop"
         options={{
-          headerTitle: "About",
+          headerTitle: "Shop",
           tabBarIcon: ({ focused, color }) => (
-            <Ionicons
-                name={focused ? "information-circle" : "information-circle-outline"}
-                color={color}
-                size={30}
+          <Ionicons 
+            name={focused ? "cart-sharp" : "cart-outline"}
+            color={color}
+            size={30}
             />
-          ),
+            ),
         }}
         />
+
+      <Tabs.Screen 
+        name="player"
+        options={{
+          headerTitle: "Player",
+          tabBarIcon: ({ focused, color }) => (
+          <Ionicons 
+            name={focused ? "play-circle-sharp" : "play-circle-outline"}
+            color={color}
+            size={30}
+            />
+            ),
+        }}
+        />
+
+      <Tabs.Screen
+        name="profile"
+        options={{
+          headerTitle: "Profile",
+          tabBarIcon: ({ focused, color }) => (
+            <Ionicons
+              name={focused? "person-sharp" : "person-outline"}
+              color={color}
+              size={30}
+            />
+          )
+        }}
+
+      />
     </Tabs>
   )
 }
