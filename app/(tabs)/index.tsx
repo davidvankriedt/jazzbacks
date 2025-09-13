@@ -1,6 +1,7 @@
 import Button from "@/components/Button";
+import ContentList from "@/components/ContentList";
 import ImageViewer from "@/components/ImageViewer";
-import { StyleSheet, View } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 
 
 const PlaceholderImage = require("../../assets/images/background-image.png");
@@ -8,15 +9,26 @@ const PlaceholderImage = require("../../assets/images/background-image.png");
 
 
 export default function Index() {
+  const images = [
+    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
+    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
+    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
+    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
+  ]
+
   return (
     <View style={styles.container}>
-      <View style={styles.imageContainer}>
-        <ImageViewer imgSource={PlaceholderImage}/>
+      <View style={styles.headerContainer}>
+        <Button type="menu"/>
+        <Button type="search"/>
       </View>
 
-      <View style={styles.footerContainer}>
-        <Button label="Press me"/>
-        <Button label="What the hell" theme="primary"/>
+      <View style={styles.contentListContainer}>
+        <ContentList 
+        title="Wednesday Gig Playlist"
+        images={images}
+        onTitlePress={() => {alert("You'll soon be able to check the playlist out!")}}
+        />
       </View>
     </View>
   );
@@ -25,9 +37,9 @@ export default function Index() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
     alignItems: "center",
     backgroundColor: "white",
+    paddingTop: 50,
   },
 
   text: {
@@ -55,5 +67,20 @@ const styles = StyleSheet.create({
     flex: 1 / 3,
     alignItems: "center",
     justifyContent: "center",
+  },
+
+  headerContainer: {
+    flex: 1 / 7,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: '100%',
+    paddingHorizontal: 50,
+  },
+
+  contentListContainer: {
+    justifyContent: "space-between",
+    marginHorizontal: 20,
+    flex: 1/2,
   }
 });

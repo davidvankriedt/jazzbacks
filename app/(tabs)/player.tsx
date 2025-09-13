@@ -15,8 +15,6 @@ export default function Shop() {
       </View>
 
       <View style={styles.footerContainer}>
-        <Button label="Press me"/>
-        <Button label="What the hell" theme="primary"/>
       </View>
     </View>
   );
