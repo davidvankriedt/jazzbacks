@@ -39,6 +39,13 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "62f14d41-e8db-48b4-a42d-755ac38325de"
+      }
+    },
+    "owner": "davidvankriedt"
   }
 }

@@ -7,4 +7,6 @@ export const icon = {
             profile: (props: any) => <Ionicons name={"person-outline"} size={40} {...props}/>,
             search: (props: any) => <Ionicons name={"search-outline"} size={40} {...props}/>,
             menu: (props: any) => <Ionicons name={"menu-outline"} size={40} {...props}/>,
+            settings: (props: any) => <Ionicons name={"cog-outline"} size={40} {...props}/>,
+            add: (props: any) => <Ionicons name={"add-outline"} size={35} {...props}/>,
         }

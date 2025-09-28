@@ -1,19 +1,24 @@
 import { Image } from "expo-image";
-import { Text, StyleSheet, Pressable } from "react-native";
-import { View, ScrollView } from "react-native";
+import { View, ScrollView, Text, StyleSheet, Pressable } from "react-native";
+import Button from "@/components/Button";
 
 type Props = {
     title: string;
     images: string[];
+    add?: boolean;
     onTitlePress: () => void;
 }
 
-export default function ContentList({ title, images, onTitlePress }: Props) {
+export default function ContentList({ title, images, add, onTitlePress }: Props) {
     return (
         <View style={styles.container}>
-            <Pressable onPress={onTitlePress}>
-                <Text style={styles.title}>{title}</Text>
-            </Pressable>
+            <View style={styles.containerHeader}>
+                <Pressable onPress={onTitlePress}>
+                    <Text style={styles.title}>{title}</Text>
+                </Pressable>
+
+                {add ? (<Button type="add"></Button>) : (<></>)}
+            </View>
             
             <ScrollView 
                 horizontal
@@ -40,6 +45,13 @@ export default function ContentList({ title, images, onTitlePress }: Props) {
 const styles = StyleSheet.create({
     container: {
         marginVertical: 10,
+    },
+
+    containerHeader: {
+        alignContent: "center",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between"
     },
     title: {
         fontSize: 18,

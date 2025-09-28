@@ -1,7 +1,6 @@
 import Button from "@/components/Button";
 import ContentList from "@/components/ContentList";
-import ImageViewer from "@/components/ImageViewer";
-import { FlatList, StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 
 
 const PlaceholderImage = require("../../assets/images/background-image.png");
@@ -23,13 +22,23 @@ export default function Index() {
         <Button type="search"/>
       </View>
 
-      <View style={styles.contentListContainer}>
+      <ScrollView showsVerticalScrollIndicator={false} style={styles.contentListContainer}>
         <ContentList 
         title="Wednesday Gig Playlist"
         images={images}
         onTitlePress={() => {alert("You'll soon be able to check the playlist out!")}}
         />
-      </View>
+        <ContentList 
+        title="Wednesday Gig Playlist"
+        images={images}
+        onTitlePress={() => {alert("You'll soon be able to check the playlist out!")}}
+        />
+        <ContentList 
+        title="Wednesday Gig Playlist"
+        images={images}
+        onTitlePress={() => {alert("You'll soon be able to check the playlist out!")}}
+        />
+      </ScrollView>
     </View>
   );
 }
@@ -37,7 +46,6 @@ export default function Index() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
     backgroundColor: "white",
     paddingTop: 50,
   },
@@ -79,7 +87,6 @@ const styles = StyleSheet.create({
   },
 
   contentListContainer: {
-    justifyContent: "space-between",
     marginHorizontal: 20,
     flex: 1/2,
   }
