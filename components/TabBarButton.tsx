@@ -6,13 +6,12 @@ import { useEffect } from "react";
 
 type Props = {
     onPress: () => void,
-    onLongPress: () => void,
     isFocused: boolean,
     routeName: keyof typeof icon,
     color: string,
 }
 
-export default function TabBarButton({ onPress, onLongPress, isFocused, routeName, color }: Props) {
+export default function TabBarButton({ onPress, isFocused, routeName, color }: Props) {
     const scale = useSharedValue(0);
 
     useEffect(() => {
@@ -34,7 +33,6 @@ export default function TabBarButton({ onPress, onLongPress, isFocused, routeNam
     return (
         <Pressable 
             onPress={onPress}
-            onLongPress={onLongPress}
             style={styles.tabBarItem}
         >
             <Animated.View style={animatedIconStyle}>

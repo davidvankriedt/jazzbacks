@@ -51,18 +51,10 @@ export default function BottomTabBar({ state, descriptors, navigation } : Bottom
           }
         };
 
-        const onLongPress = () => {
-          navigation.emit({
-            type: 'tabLongPress',
-            target: route.key,
-          });
-        };
-
         return (
           <TabBarButton 
             key={route.name}
             onPress={onPress}
-            onLongPress={onLongPress}
             isFocused={isFocused}
             routeName={route.name as "index" | "shop" | "player" | "profile"}
             color={ isFocused ? "#fff" : "#9FABEF" }

@@ -5,13 +5,14 @@ import React from "react";
 
 interface Props {
     label?: string,
-    type?: keyof typeof icon
+    type?: keyof typeof icon,
+    onPress?: () => void,
 }
 
-export default function Button({ label, type }: Props) {
+export default function Button({ label, type, onPress }: Props) {
     return (
         <View style={styles.buttonContainer}>
-            <Pressable style={styles.button} onPress={() => alert("You pressed a button.")}>
+            <Pressable style={styles.button} onPress={onPress}>
                 { type ? React.createElement(icon[type]) : <></> }
                 { label ? <Text style={styles.buttonLabel}>{label}</Text> : <></>}
             </Pressable>
