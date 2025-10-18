@@ -1,6 +1,5 @@
 import Button from "@/components/Button";
 import ContentList from "@/components/ContentList";
-import { DrawerActions, useNavigation } from '@react-navigation/native';
 import { ScrollView, StyleSheet, View } from "react-native";
 
 
@@ -13,13 +12,11 @@ export default function Index() {
     "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
   ]
 
-  const navigation = useNavigation();
   
 
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Button type="menu" onPress={() => navigation.dispatch(DrawerActions.openDrawer())} />
         <Button type="search"/>
       </View>
 

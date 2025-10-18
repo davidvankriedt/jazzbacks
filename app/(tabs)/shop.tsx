@@ -18,7 +18,6 @@ export default function Shop() {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Button type="menu"/>
         <Button type="search"/>
       </View>
 
