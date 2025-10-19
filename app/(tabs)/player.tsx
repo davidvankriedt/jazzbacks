@@ -1,5 +1,4 @@
 import Button from "@/components/Button";
-import ImageViewer from "@/components/ImageViewer";
 import { StyleSheet, View } from "react-native";
 
 
@@ -11,7 +10,6 @@ export default function Shop() {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <ImageViewer imgSource={PlaceholderImage}/>
       </View>
 
       <View style={styles.footerContainer}>

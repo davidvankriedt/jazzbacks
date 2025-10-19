@@ -8,11 +8,6 @@ export default function TabLayout() {
         <Label>Home</Label>
         <Icon sf={"house.fill"} drawable="ic_menu_mylocation"/>
       </NativeTabs.Trigger>
-      
-      <NativeTabs.Trigger name="shop">
-        <Label>Shop</Label>
-        <Icon sf={"cart.fill"} drawable="ic_menu_mylocation"/>
-      </NativeTabs.Trigger>
 
       <NativeTabs.Trigger name="player">
         <Label>Player</Label>
@@ -22,6 +17,11 @@ export default function TabLayout() {
       <NativeTabs.Trigger name="profile">
         <Label>Profile</Label>
         <Icon sf={"person.fill"} drawable="ic_menu_mylocation"/>
+      </NativeTabs.Trigger>
+
+      <NativeTabs.Trigger name="search">
+        <Label>Search</Label>
+        <Icon sf={"magnifyingglass.circle.fill"} drawable="ic_menu_mylocation"/>
       </NativeTabs.Trigger>
     </NativeTabs>
   )

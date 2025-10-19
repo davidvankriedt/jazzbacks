@@ -52,17 +52,6 @@ const styles = StyleSheet.create({
     paddingTop: 50,
   },
 
-  text: {
-    fontSize: 50, 
-    color: "blue"
-  },
-
-  button: {
-    fontSize: 20,
-    color: "blue",
-    textDecorationLine: "underline",
-  },
-
   image: {
     width: 320,
     height: 440,

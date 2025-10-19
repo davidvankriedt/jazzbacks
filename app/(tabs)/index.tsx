@@ -1,6 +1,5 @@
-import Button from "@/components/Button";
 import ContentList from "@/components/ContentList";
-import { ScrollView, StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet, View, Text } from "react-native";
 
 
 
@@ -17,7 +16,7 @@ export default function Index() {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Button type="search"/>
+        <Text style={styles.title}>Welcome</Text>
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false} style={styles.contentListContainer}>
@@ -48,38 +47,19 @@ const styles = StyleSheet.create({
     paddingTop: 50,
   },
 
-  text: {
-    fontSize: 50, 
-    color: "blue"
-  },
-
-  button: {
-    fontSize: 20,
-    color: "blue",
-    textDecorationLine: "underline",
-  },
-
-  image: {
-    width: 320,
-    height: 440,
-    borderRadius: 18,
-  },
-
-  imageContainer: {
-    flex: 1,
-  },
-
-  footerContainer: {
-    flex: 1 / 3,
-    alignItems: "center",
-    justifyContent: "center",
-  },
+  title: {
+        fontSize: 30,
+        fontWeight: 'bold',
+        marginBottom: 10,
+        marginLeft: 10,
+        color: '#333',
+    },
 
   headerContainer: {
     flex: 1 / 7,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "center",
     width: '100%',
     paddingHorizontal: 50,
   },
