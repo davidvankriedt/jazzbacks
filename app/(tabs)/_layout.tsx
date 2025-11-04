@@ -3,7 +3,7 @@ import { NativeTabs, Icon, Label } from 'expo-router/unstable-native-tabs';
 
 export default function TabLayout() {
   return (
-    <NativeTabs>
+    <NativeTabs minimizeBehavior='automatic'>
       <NativeTabs.Trigger name="index">
         <Label>Home</Label>
         <Icon sf={"house.fill"} drawable="ic_menu_mylocation"/>
@@ -19,9 +19,9 @@ export default function TabLayout() {
         <Icon sf={"person.fill"} drawable="ic_menu_mylocation"/>
       </NativeTabs.Trigger>
 
-      <NativeTabs.Trigger name="search">
+      <NativeTabs.Trigger name="search" role="search">
         <Label>Search</Label>
-        <Icon sf={"magnifyingglass.circle.fill"} drawable="ic_menu_mylocation"/>
+        <Icon sf={"magnifyingglass"} drawable="ic_menu_mylocation"/>
       </NativeTabs.Trigger>
     </NativeTabs>
   )

@@ -7,8 +7,9 @@ export default function SearchLayout() {
                 name="index"
                 options={{
                     title: 'Search',
+                    headerShown: false,
                     headerSearchBarOptions: {
-                        placement: 'automatic',
+                        hideWhenScrolling: true,
                         placeholder: 'Search',
                         onChangeText: () => {},
                     }

@@ -2,19 +2,13 @@ import Button from "@/components/Button";
 import ContentList from "@/components/ContentList";
 import { StyleSheet, View, Text, ScrollView } from "react-native";
 import { Image } from "expo-image";
+import { productImages } from "@/constants/productImages";
 
 
 
 export default function Profile() {
-  const images = [
-    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
-    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
-    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
-    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
-  ]
-
-  const imagePlaceholder = "/Users/davidvankriedt/projects/jazzbacks/assets/images/profile-pic.jpeg";
-  const namePlaceholder = "Larry Van Kriedt"
+  const profileImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/GrLa0238.JPG/1200px-GrLa0238.JPG";
+  const namePlaceholder = "Larry Van Kriedt";
 
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
@@ -23,20 +17,20 @@ export default function Profile() {
       </View>
 
       <View style={styles.profileContainer}>
-        <Image source={imagePlaceholder} style={styles.profileImage}></Image>
+        <Image source={profileImage} style={styles.profileImage}></Image>
         <Text style={styles.profileTitle}>{namePlaceholder}</Text>
       </View>
 
       <View style={styles.contentListContainer}>
         <ContentList 
           title="Library"
-          images={images}
+          images={productImages.toReversed()}
           add={true}
           onTitlePress={() => {alert("You'll soon be able to check the playlist out!")}}
         />
         <ContentList 
           title="Wednesday Gig Playlist"
-          images={images}
+          images={productImages}
           add={true}
           onTitlePress={() => {alert("You'll soon be able to check the playlist out!")}}
         />

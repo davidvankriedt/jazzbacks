@@ -1,55 +1,47 @@
+import { ScrollView, StyleSheet, View, Text } from "react-native";
+import ContentList from "@/components/ContentList";
+import { productImages } from "@/constants/productImages";
 import Button from "@/components/Button";
-import { StyleSheet, View } from "react-native";
 
-
-const PlaceholderImage = require("../../assets/images/background-image.png");
-
-
-
-export default function Shop() {
+export default function Index() {
   return (
     <View style={styles.container}>
-      <View style={styles.imageContainer}>
+      <View style={styles.headerContainer}>
+        <Text style={styles.title}>Player</Text>
       </View>
 
-      <View style={styles.footerContainer}>
+      <View>
+        <Button 
+            type="player" 
+            onPress={() => alert("You'll soon be able to play songs through this.")}></Button>
       </View>
     </View>
   );
 }
- 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
     backgroundColor: "white",
+    paddingTop: 50,
   },
-
-  text: {
-    fontSize: 50, 
-    color: "blue"
+  title: {
+    fontSize: 30,
+    fontWeight: "bold",
+    marginBottom: 10,
+    marginLeft: 10,
+    color: "#333",
   },
-
-  button: {
-    fontSize: 20,
-    color: "blue",
-    textDecorationLine: "underline",
-  },
-
-  image: {
-    width: 320,
-    height: 440,
-    borderRadius: 18,
-  },
-
-  imageContainer: {
-    flex: 1,
-  },
-
-  footerContainer: {
-    flex: 1 / 3,
+  headerContainer: {
+    flex: 1 / 7,
+    flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-  }
+    width: "100%",
+    paddingHorizontal: 50,
+  },
+  contentListContainer: {
+    marginHorizontal: 20,
+    flex: 1 / 2,
+  },
 });

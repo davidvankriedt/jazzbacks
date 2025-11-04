@@ -1,22 +1,25 @@
-import { ScrollView, StyleSheet, View, Image } from "react-native";
+import { ScrollView, StyleSheet, View, Image, Text } from "react-native";
+import { productImages } from "@/constants/productImages";
 
 
 
 export default function SearchIndex() {
-  const images = [
-    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
-    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
-    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
-    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
-  ]
 
   return (
     <View style={styles.container}>
-      <ScrollView showsVerticalScrollIndicator={false} style={styles.contentContainer}>
+      <ScrollView 
+        showsVerticalScrollIndicator={false} 
+        style={styles.contentContainer}
+        contentInsetAdjustmentBehavior="automatic"
+        >
+        <View style={styles.titleContainer}>
+            <Text style={styles.title}>Catalogue</Text>
+        </View>
         <View style={styles.imageGrid}>
-            {images.map((image, index) => (
-                <View key={index} style={styles.imageWrapper}>
-                    <Image style={styles.image}></Image>
+            {productImages.map((image, index) => (
+                <View key={index} style={styles.trackWrapper}>
+                    <Image style={styles.image} src={image}></Image>
+                    <Text style={styles.text}>All of Me - Backing Track.</Text>
                 </View>
             ))}
         </View>
@@ -37,17 +40,47 @@ const styles = StyleSheet.create({
   },
 
   imageGrid: {
+    display: 'flex',
     flexDirection: "row",
-
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignContent: 'space-around',
+    rowGap: 20,
+    columnGap: 12,
   },
 
-  imageWrapper: {
+  trackWrapper: {
+  },
 
+  text: {
+    fontSize: 10,
+    marginTop: 5,
+    color: '#333',
+    maxWidth: 170,
+    textAlign: 'center',
+  },
+
+  titleContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 10,
+    paddingBottom: 30,
+  },
+
+  title: {
+    fontSize: 30,
+    marginTop: 5,
+    color: '#333',
+    maxWidth: 170,
+    textAlign: 'center',
+    fontWeight: 'bold',
   },
 
   image: {
-    width: 150,
-    height: 150,
+    width: 170,
+    height: 170,
     borderRadius: 18,
   }
+
+
 });
