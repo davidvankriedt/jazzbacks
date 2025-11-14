@@ -1,9 +1,22 @@
 import { ScrollView, StyleSheet, View, Image, Text } from "react-native";
-import { productImages } from "@/constants/productImages";
 
 
 
 export default function SearchIndex() {
+  const images = [
+    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
+    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
+    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
+    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
+    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
+    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
+    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
+    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
+    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
+    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
+    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
+    "/Users/davidvankriedt/projects/jazzbacks/assets/images/background-image.png",
+  ]
 
   return (
     <View style={styles.container}>
@@ -16,10 +29,10 @@ export default function SearchIndex() {
             <Text style={styles.title}>Catalogue</Text>
         </View>
         <View style={styles.imageGrid}>
-            {productImages.map((image, index) => (
+            {images.map((image, index) => (
                 <View key={index} style={styles.trackWrapper}>
                     <Image style={styles.image} src={image}></Image>
-                    <Text style={styles.text}>All of Me - Backing Track.</Text>
+                    <Text style={styles.text}>All of Me - Backing Track. The best track in the world, it is amazing!</Text>
                 </View>
             ))}
         </View>
@@ -41,12 +54,13 @@ const styles = StyleSheet.create({
 
   imageGrid: {
     display: 'flex',
+    display: 'flex',
     flexDirection: "row",
     flexWrap: 'wrap',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignContent: 'space-around',
-    rowGap: 20,
-    columnGap: 12,
+    rowGap: 30,
+    columnGap: 20,
   },
 
   trackWrapper: {
